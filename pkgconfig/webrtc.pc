@@ -1,0 +1,14 @@
+# Package Information for pkg-config
+
+prefix=/Users/jiben/Desktop/test_webrtc/github/webrtcbuilds/out/webrtcbuilds
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib/Debug
+includedir=${prefix}/include
+
+Name: WebRTC
+Description: WebRTC Library
+Version: 1.0.0
+
+Libs: -L${libdir} -lwebrtc
+Libs.private: -framework Cocoa -framework Foundation -framework IOKit -framework Security -framework SystemConfiguration -framework ApplicationServices -framework CoreServices -framework CoreVideo -framework CoreAudio -framework AudioToolbox -framework QTKit -framework AVFoundation -framework CoreMedia
+Cflags: -I${includedir}
