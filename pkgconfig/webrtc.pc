@@ -1,6 +1,6 @@
 # Package Information for pkg-config
 
-prefix=/Users/jiben/Desktop/test_webrtc/github/webrtcbuilds/out/webrtcbuilds
+prefix=/Users/jiben/Desktop/test_webrtc/github/webrtc_starter/vendor
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib/Debug
 includedir=${prefix}/include
