@@ -9,6 +9,5 @@ Name: WebRTC
 Description: WebRTC Library
 Version: 1.0.0
 
-Libs: -L${libdir} -lwebrtc
-Libs.private: -framework Cocoa -framework Foundation -framework IOKit -framework Security -framework SystemConfiguration -framework ApplicationServices -framework CoreServices -framework CoreVideo -framework CoreAudio -framework AudioToolbox -framework QTKit -framework AVFoundation -framework CoreMedia
+Libs: -L${libdir} 
 Cflags: -I${includedir}
