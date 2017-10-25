@@ -25,19 +25,21 @@ function package::prepare() {
   for cfg in $configs; do
     mkdir -p lib/$cfg
   done
+  popd >/dev/null
 
   # find and copy header files
-#   pushd src >/dev/null
-#   local headersSourceDir=$srcdir
-#   local headersDestDir=$outdir/include
-#   find $headersSourceDir -name '*.h' -exec $CP --parents '{}' $headersDestDir ';'
-#   popd >/dev/null
+  pushd $srcdir >/dev/null
+  local headersSourceDir=.
+  local headersDestDir=$outdir/include
+  find $headersSourceDir -name '*.h' -exec $CP --parents '{}' $headersDestDir ';'
+  popd >/dev/null
 
   # find and copy libraries
-#   pushd src/out >/dev/null
-#   find . -maxdepth 3 \( -name '*.so' -o -name '*.dll' -o -name '*webrtc_full*' -o -name *.jar \) \
-#     -exec $CP --parents '{}' $outdir/$package_filename/lib ';'
-#   popd >/dev/null
+  for cfg in $configs; do
+    pushd $srcdir/out/$cfg/obj >/dev/null
+    find . \( -name '*.a' -o -name '*.dll' -o -name '*.so' -o -name *.jar \) \
+        -exec $CP --parents '{}' $outdir/lib/$cfg ';'
+    popd >/dev/null
+  done
 
-  popd >/dev/null
 }

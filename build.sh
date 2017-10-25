@@ -9,7 +9,7 @@ set -x
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $DIR/util.sh
 
-WEBRTC_ROOT=${WEBRTC_ROOT:-""}
+WEBRTC_ROOT="/Users/jiben/Desktop/test_webrtc/github/webrtcbuilds/out/src"
 OUTDIR=${OUTDIR:-vendor}
 CONFIGS=${CONFIGS:-Debug Release}
 
@@ -24,7 +24,7 @@ echo "Target OS: $TARGET_OS"
 echo "Target CPU: $TARGET_CPU"
 
 echo Packaging WebRTC
-package::prepare $PLATFORM "" $OUTDIR "$CONFIGS"
+package::prepare $PLATFORM $WEBRTC_ROOT $OUTDIR "$CONFIGS"
 
 echo Build successful
 
