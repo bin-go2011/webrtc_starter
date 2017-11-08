@@ -35,3 +35,4 @@ endif(APPLE)
 
 
 add_subdirectory(test)
+add_subdirectory(peerconnection)
