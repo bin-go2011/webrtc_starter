@@ -36,3 +36,4 @@ endif(APPLE)
 
 add_subdirectory(test)
 add_subdirectory(peerconnection)
+add_subdirectory(sigslot)
